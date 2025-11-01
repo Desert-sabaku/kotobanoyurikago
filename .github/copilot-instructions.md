@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions for Kotoba_no_yurikago (ことばのゆりかご)
+# GitHub Copilot Instructions for Kotoba_no_yurikago (コトバのゆりかご)
 
 ## 1. Project Overview
 
@@ -16,9 +16,9 @@ This is a web application for creating, discussing, and sharing Japanese transla
 * **Authentication:** `devise` gem
 * **Authorization:** `pundit` gem
 
-For detailed requirements, please refer to the [Requirements Specification](../docs/requirementsSpecification.md). (詳細な要件については、[要件仕様書](../docs/requirementsSpecification.md)を参照してください。)
+For detailed requirements, please refer to the [requirements specification](../docs/requirementsSpecification.md). (詳細な要件については、[要件仕様書](../docs/requirementsSpecification.md)を参照してください。)
 
-For wireframes, please refer to the [Wireframe Documentation](../docs/wireframes.md). (ワイヤーフレームについては、[ワイヤーフレーム仕様書](../docs/wireframes.md)を参照してください。)
+For the wireframes, please refer to the images in `docs/design`.  (ワイヤーフレームについては、`docs/design`の画像を参照してください。)
 
 ## 3. Key Architectural Principles (重要な設計原則)
 
