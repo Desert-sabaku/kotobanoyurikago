@@ -64,6 +64,7 @@ group :development do
   gem "web-console"
 
   gem "solargraph"
+  gem "htmlbeautifier"
 end
 
 group :test do

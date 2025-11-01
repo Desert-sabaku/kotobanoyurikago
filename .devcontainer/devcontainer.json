@@ -43,7 +43,8 @@
                 "aliariff.vscode-erb-beautify",
                 "KoichiSasada.vscode-rdbg",
                 "streetsidesoftware.code-spell-checker",
-                "formulahendry.auto-rename-tag"
+                "formulahendry.auto-rename-tag",
+                "esbenp.prettier-vscode"
             ]
         }
     },
