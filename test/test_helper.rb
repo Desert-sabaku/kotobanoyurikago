@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "bcrypt"
 
 module ActiveSupport
   class TestCase
@@ -18,6 +19,6 @@ if defined?(ActionMailer::Base)
   # Disable actual email deliveries during tests. This prevents mail from being
   # sent and keeps test runs deterministic. Clear any existing deliveries so
   # tests start from a clean state.
-  ActionMailer::Base.perform_deliveries = false
+  ActionMailer::Base.perform_deliveries = :test
   ActionMailer::Base.deliveries.clear if ActionMailer::Base.deliveries.respond_to?(:clear)
 end
