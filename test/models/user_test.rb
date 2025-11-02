@@ -148,7 +148,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "should reset password with valid token" do
     @user.save
-    raw_token, encrypted_token = Devise.token_generator.generate(User, :reset_password_token)
+    _, encrypted_token = Devise.token_generator.generate(User, :reset_password_token)
     @user.reset_password_token = encrypted_token
     @user.reset_password_sent_at = Time.current
     @user.save!
