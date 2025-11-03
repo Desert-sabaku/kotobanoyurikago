@@ -4,6 +4,7 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(
       email: "test@example.com",
+      username: "testuser",
       password: "password123",
       password_confirmation: "password123"
     )
@@ -62,6 +63,7 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     duplicate_user = User.new(
       email: @user.email,
+      username: "otheruser",
       password: "password123",
       password_confirmation: "password123"
     )
@@ -74,6 +76,7 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     duplicate_user = User.new(
       email: "test@example.com",
+      username: "otheruser2",
       password: "password123",
       password_confirmation: "password123"
     )

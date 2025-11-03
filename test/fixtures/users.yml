@@ -7,12 +7,14 @@
 # test/fixtures/users.yml
 one:
     email: user1@example.com
+    username: user1
     encrypted_password: <%= BCrypt::Password.create('password123') %>
     created_at: <%= Time.now %>
     updated_at: <%= Time.now %>
 
 two:
     email: user2@example.com
+    username: user2
     encrypted_password: <%= BCrypt::Password.create('password456') %>
     created_at: <%= Time.now %>
     updated_at: <%= Time.now %>
