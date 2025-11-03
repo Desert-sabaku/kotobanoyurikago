@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_03_090000) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_03_090001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -44,6 +44,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_03_090000) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.text "wiki_body"
+    t.index ["title"], name: "index_subjects_on_title_unique", unique: true
     t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
