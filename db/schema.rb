@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_03_033447) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_03_040613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "proposals", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "reasoning"
+    t.bigint "subject_id", null: false
+    t.string "term", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["subject_id"], name: "index_proposals_on_subject_id"
+    t.index ["user_id"], name: "index_proposals_on_user_id"
+  end
 
   create_table "subjects", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -48,5 +59,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_03_033447) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "proposals", "subjects"
+  add_foreign_key "proposals", "users"
   add_foreign_key "subjects", "users"
 end
