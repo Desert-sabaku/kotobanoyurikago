@@ -5,5 +5,5 @@ class Proposal < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :term, presence: true
-  validates :term, uniqueness: { scope: :subject_id }
+  validates :term, uniqueness: { scope: :subject_id, case_sensitive: false }
 end
