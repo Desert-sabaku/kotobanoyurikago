@@ -15,10 +15,10 @@
             "moby": false
         },
         "ghcr.io/devcontainers/features/common-utils:2": {
-            "version": "latest",
-            "configureSshAgent": true,
             "installZsh": true,
-            "configureZshAsDefaultShell": true
+            "configureZshAsDefaultShell": true,
+            "installOhMyZsh": true,
+            "installOhMyZshConfig": true
         }
     },
     "containerEnv": {
