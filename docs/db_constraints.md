@@ -2,7 +2,7 @@
 
 This project enforces several important database-level constraints. This document summarizes them and describes how we handle case-insensitive uniqueness.
 
-Key constraints
+## Key constraints
 
 - subjects.title: unique (case-insensitive)
   - Implemented via a functional unique index on `LOWER(title)`.
@@ -16,11 +16,11 @@ Key constraints
   - Implemented with a composite unique index on `(user_id, proposal_id)`.
   - Application validation: `validates :user_id, uniqueness: { scope: :proposal_id }` in `Vote` model.
 
-Self-referential foreign key
+## Self-referential foreign key
 
 - comments.parent_comment_id references comments.id with `ON DELETE SET NULL` behavior.
 
-Migration notes
+## Migration notes
 
 - Migrations that change uniqueness semantics to be case-insensitive perform the following safely:
   1. Trim / normalize values.
@@ -29,7 +29,7 @@ Migration notes
 
 If you need different conflict resolution (for example, prompt users to choose a canonical term), do not run the normalization migrations; instead handle conflicts manually.
 
-Testing / CI
+## Testing / CI
 
 - Make sure the `RAILS_MASTER_KEY` secret is present in CI (this repo stores it as a repo secret). GitHub Actions workflows should set `RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}`.
 - To create the test DB locally:
@@ -39,6 +39,6 @@ bin/rails db:create RAILS_ENV=test
 bin/rails db:migrate RAILS_ENV=test
 ```
 
-Contact
+## Contact
 
 If you have questions about constraint choices or want a different conflict resolution strategy, open an issue or ping the team.
